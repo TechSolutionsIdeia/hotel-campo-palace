@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pesquisa de Satisfação | Hotel Campo Palace</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#8A7541;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .box{
+      background:#FFFFFF;
+      width:100%;
+      max-width:650px;
+      padding:40px;
+      border-radius:24px;
+      box-shadow:0 10px 40px rgba(0,0,0,0.12);
+    }
+
+    h1{
+      text-align:center;
+      color:#8A7541;
+      font-size:32px;
+      margin-bottom:8px;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:#777;
+      margin-bottom:35px;
+      line-height:1.5;
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+    }
+
+    .question{
+      background:#faf8f3;
+      border:1px solid #eee2c8;
+      border-radius:16px;
+      padding:22px;
+    }
+
+    .question-title{
+      font-size:17px;
+      font-weight:600;
+      color:#8A7541;
+      margin-bottom:18px;
+      line-height:1.5;
+    }
+
+    .options{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .options label{
+      flex:1;
+      min-width:120px;
+      cursor:pointer;
+    }
+
+    .options input{
+      display:none;
+    }
+
+    .option-box{
+      border:2px solid #d8c7a1;
+      padding:14px;
+      border-radius:12px;
+      text-align:center;
+      transition:0.3s;
+      color:#8A7541;
+      font-weight:600;
+      background:#fff;
+    }
+
+    .options input:checked + .option-box{
+      background:#8A7541;
+      color:#fff;
+      border-color:#8A7541;
+    }
+
+    textarea{
+      width:100%;
+      height:120px;
+      border:1.5px solid #d6c7a0;
+      border-radius:14px;
+      padding:15px;
+      resize:none;
+      outline:none;
+      font-size:15px;
+      margin-top:10px;
+    }
+
+    textarea:focus{
+      border-color:#8A7541;
+    }
+
+    button{
+      background:#8A7541;
+      color:#fff;
+      border:none;
+      padding:18px;
+      border-radius:14px;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#756338;
+    }
+
+    button:disabled{
+      background:#b8a87a;
+      cursor:not-allowed;
+    }
+
+    .success{
+      display:none;
+      text-align:center;
+      background:#f0f9eb;
+      border:1.5px solid #8A7541;
+      border-radius:14px;
+      padding:20px;
+      color:#8A7541;
+      font-weight:bold;
+    }
+
+    .error{
+      display:none;
+      text-align:center;
+      background:#fff0f0;
+      border:1.5px solid #e55;
+      border-radius:14px;
+      padding:20px;
+      color:#c00;
+      font-weight:bold;
+    }
+
+    @media(max-width:700px){
+      .box{ padding:28px 20px; }
+      .question-title{ font-size:15px; }
+      .options{ flex-direction:column; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>Hotel Campo Palace</h1>
+
+    <p class="subtitle">
+      Sua opinião é muito importante para melhorarmos cada vez mais sua experiência.
+    </p>
+
+    <form id="formPesquisa">
+
+      <div class="question">
+        <div class="question-title">Foi tudo bem na recepção no momento do check-in?</div>
+        <div class="options">
+          <label><input type="radio" name="checkin" value="Sim" required><div class="option-box">Sim</div></label>
+          <label><input type="radio" name="checkin" value="Não"><div class="option-box">Não</div></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-title">O quarto estava limpo e higienizado?</div>
+        <div class="options">
+          <label><input type="radio" name="limpeza" value="Sim" required><div class="option-box">Sim</div></label>
+          <label><input type="radio" name="limpeza" value="Não"><div class="option-box">Não</div></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-title">Você recomendaria o Hotel Campo Palace?</div>
+        <div class="options">
+          <label><input type="radio" name="indicaria" value="Sim" required><div class="option-box">Sim</div></label>
+          <label><input type="radio" name="indicaria" value="Não"><div class="option-box">Não</div></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-title">Deseja deixar alguma observação?</div>
+        <textarea id="comentario" placeholder="Escreva aqui..."></textarea>
+      </div>
+
+      <button type="submit" id="btnEnviar">Enviar Pesquisa</button>
+
+      <div class="success" id="success">
+        ✅ Pesquisa enviada com sucesso! Obrigado pela sua avaliação.
+      </div>
+
+      <div class="error" id="error">
+        ❌ Erro ao enviar. Por favor, tente novamente.
+      </div>
+
+    </form>
+
+  </div>
+
+  <script>
+
+    // ⚠️ SUBSTITUIR pela URL do webhook após ativar no n8n
+    const WEBHOOK_URL = 'https://n8n.paessolucoes.com/webhook/pesquisa-satisfacao';
+
+    const form = document.getElementById('formPesquisa');
+    const btn  = document.getElementById('btnEnviar');
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+
+      const checkin   = document.querySelector('input[name="checkin"]:checked')?.value;
+      const limpeza   = document.querySelector('input[name="limpeza"]:checked')?.value;
+      const indicaria = document.querySelector('input[name="indicaria"]:checked')?.value;
+      const comentario = document.getElementById('comentario').value.trim();
+
+      if (!checkin || !limpeza || !indicaria) {
+        alert('Por favor, responda todas as perguntas antes de enviar.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      document.getElementById('success').style.display = 'none';
+      document.getElementById('error').style.display   = 'none';
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ checkin, limpeza, indicaria, comentario })
+        });
+
+        if (res.ok) {
+          document.getElementById('success').style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error('status ' + res.status);
+        }
+      } catch(err) {
+        console.error('Erro:', err);
+        document.getElementById('error').style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Enviar Pesquisa';
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
