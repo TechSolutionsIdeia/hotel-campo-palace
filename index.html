@@ -658,17 +658,41 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 
 /* =========================================================
    PROFISSIONAIS A TRABALHO
-   ========================================================= */
-.professionals .container {
-    max-width: 100%;
-    width: 100%;
-    padding: 0;
+========================================================= */
+
+.professionals .container{
+    width:100%;
+    max-width:100%;
+    padding:0;
 }
 
-.professionals img {
-    display: block;
-    width: 100%;
-    height: auto;
+.professionals img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+/* Desktop aparece por padrão */
+.professionals-desktop{
+    display:block !important;
+}
+
+/* Mobile escondido por padrão */
+.professionals-mobile{
+    display:none !important;
+}
+
+/* MOBILE */
+@media screen and (max-width:768px){
+
+    .professionals-desktop{
+        display:none !important;
+    }
+
+    .professionals-mobile{
+        display:block !important;
+    }
+
 }
 
 /* =========================================================
@@ -962,11 +986,23 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 </section>
 
 <!-- =============================  PROFISSIONAIS A TRABALHO ============================= -->
- <section class="professionals section-pad">
-  <div class="container center">
-    <img src="https://hotelcampopalace.com.br/wp-content/uploads/2026/06/banner-site.jpg.jpeg">
-  </div>
- </section>
+<section class="professionals section-pad">
+    <div class="container center">
+
+        <!-- Desktop -->
+        <img
+            class="professionals-desktop"
+            src="https://hotelcampopalace.com.br/wp-content/uploads/2026/06/banner-site.jpg.jpeg"
+            alt="Profissionais a trabalho">
+
+        <!-- Mobile -->
+        <img
+            class="professionals-mobile"
+            src="https://hotelcampopalace.com.br/wp-content/uploads/2026/06/ChatGPT-Image-11-de-jun.-de-2026-12_01_511.png"
+            alt="Profissionais a trabalho">
+
+    </div>
+</section>
 
 <!-- ============================= POLÍTICAS ============================= -->
 <section class="policies section-pad">
@@ -983,7 +1019,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 </section>
 
 
-<!-- ============================= PROVA SOCIAL ============================= -->
+<!-- ============================= PROVA SOCIAL ============================= 
 <section class="reviews section-pad" id="avaliacoes">
   <div class="container">
     <div class="rating-head">
@@ -993,7 +1029,6 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
       <div class="rating-meta">Baseado em <strong>532 avaliações</strong> no <a href="#" target="_blank">Google</a></div>
     </div>
     <div class="review-grid">
-      <!-- Substituir pelos depoimentos reais do Google -->
       <div class="review-card">
         <div class="rstars">★★★★★</div>
         <p>“[ Colar aqui um depoimento real de hóspede do Google — sobre atendimento, limpeza ou café da manhã. ]”</p>
@@ -1011,7 +1046,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- ============================= CTA FINAL ============================= -->
 <section class="cta-final">
