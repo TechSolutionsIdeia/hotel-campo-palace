@@ -300,22 +300,37 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 
 @media(max-width:768px){
 
+@media(max-width:768px){
+
   .hero{
-    min-height:auto;
-    padding:140px 0 60px;
+    min-height:100svh;
+    padding:130px 0 50px;
+    align-items:flex-start;
   }
 
   .hero-bg{
-    background:
-      linear-gradient(
-        180deg,
-        rgba(16,12,8,.82) 0%,
-        rgba(16,12,8,.56) 45%,
-        rgba(16,12,8,.42) 100%
-      ),
-      url('https://hotelcampopalace.com.br/wp-content/uploads/2026/06/foto-01.jpg-scaled.jpeg')
-      center center/cover no-repeat;
-  }
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(16,12,8,.55) 0%,
+      rgba(16,12,8,.30) 45%,
+      rgba(16,12,8,.18) 100%
+    ),
+    url('https://hotelcampopalace.com.br/wp-content/uploads/2026/06/foto-01.jpg-scaled.jpeg');
+
+  /* mostra mais do hotel */
+  background-size: auto 100%;
+
+  /* traz o prédio mais pro centro */
+  background-position: 80% top;
+
+  background-repeat:no-repeat;
+
+  background-color:#15110d;
+}
+
+}
 
   .hero-inner{
     max-width:100%;
