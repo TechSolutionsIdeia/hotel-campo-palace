@@ -355,49 +355,10 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 /* =========================================================
    QUICK FACTS STRIP
    ========================================================= */
-.facts{
-  background:linear-gradient(120deg,var(--gold) 0%,var(--gold-2) 100%);
-  color:#3a2f16;
-  padding:0;
-}
-
-.facts-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  align-items:stretch;
-}
-
-.fact{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  padding:26px 20px;
-  border-right:1px solid rgba(58,47,22,.16);
-  min-width:0;
-}
-
-.fact:last-child{
-  border-right:0;
-}
-
-.fact svg{
-  width:30px;
-  height:30px;
-  fill:#5a4413;
-  flex:none;
-}
-
-.fact b{
-  display:block;
-  font-size:.95rem;
-  color:#3a2f16;
-  line-height:1.2;
-}
-
-.fact span{
-  font-size:.82rem;
-  color:rgba(58,47,22,.7);
-  line-height:1.4;
+.quick-facts {
+    background: #C79E4D; /* cor desejada */
+    height: 80px;       /* ajuste a altura */
+    width: 100%;
 }
 
 /* RESPONSIVO */
@@ -537,7 +498,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 .ph .ph-inner{
   padding:8px;
   img{
-    border-radius: 22px;
+    border-radius: 18px;
   }
 }
 .ph svg{width:34px;height:34px;fill:rgba(166,124,46,.6);margin:0 auto 8px}
@@ -572,6 +533,12 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 /* =========================================================
    COMODIDADES
    ========================================================= */
+#comodidades{
+  background: #C79E4D;
+}
+#estrutura, #texto-comodidades{
+  color:#fff;
+}
 .amen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
 .amen-card{
   background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);
@@ -772,7 +739,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 </head>
 <body>
 
-<!-- ============================= HEADER ============================= -->
+<!-- ============================= HEADER ============================= 
 <header class="site-header" id="header">
   <div class="container nav">
     <a href="#top" class="brand">
@@ -790,11 +757,10 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
         <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg>
         (44) 3525-1919
       </a>
-      <!-- TODO: trocar wa.me pelo número de WhatsApp real -->
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
-</header>
+</header> -->
 
 <a id="top"></a>
 
@@ -806,39 +772,14 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
     <h1>Seu descanso no <em>coração</em> de Campo Mourão</h1>
     <p>Conforto, atendimento acolhedor, segurança e um excelente café da manhã — a poucos passos do centro comercial, cultural e dos principais pontos da cidade.</p>
     <div class="hero-actions">
-      <a href="https://wa.me/554435251919" class="btn btn-gold btn-lg">Reservar Agora</a>
+      <a href="https://wa.me/554435251919" class="btn btn-gold btn-lg" target="_blank">Reservar Agora</a>
       <a href="#quartos" class="btn btn-outline btn-lg">Ver quartos</a>
     </div>
   </div>
 </section>
 
 <!-- ============================= QUICK FACTS ============================= -->
-<section class="facts">
-  <div class="container">
-    <div class="facts-grid">
-      <div class="fact">
-        <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5 3.8 9.7 9 11 5.2-1.3 9-6 9-11V5l-9-4z"/></svg>
-        <div><b>Localização central</b><span>No centro de Campo Mourão</span></div>
-      </div>
-      <div class="fact">
-        <svg viewBox="0 0 24 24"><path d="M2 11h20v2H2zM4 7h16a2 2 0 0 1 2 2H2a2 2 0 0 1 2-2zM3 15h18v3a1 1 0 0 1-1 1h-1l-1 2h-2l1-2H7l1 2H6l-1-2H4a1 1 0 0 1-1-1z"/></svg>
-        <div><b>Café da manhã</b><span>Varieadade, sabor e energia</span></div>
-      </div>
-      <div class="fact">
-        <svg viewBox="0 0 24 24"><path d="M6 2h9a5 5 0 0 1 0 10h-5v8H6V2zm4 7h4a2 2 0 0 0 0-4h-4v4z"/></svg>
-        <div><b>Ar-condicionado</b><span>Conforto e bem estar</span></div>
-      </div>
-      <div class="fact">
-        <svg viewBox="0 0 24 24"><path d="M12 3C7 3 3.1 5.1 1 8l11 13L23 8c-2.1-2.9-6-5-11-5zm0 7a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/></svg>
-        <div><b>Wi-Fi grátis</b><span>Em todo o hotel</span></div>
-      </div>
-      <div class="fact">
-        <svg viewBox="0 0 24 24"><path d="M6 2h9a5 5 0 0 1 0 10h-5v8H6V2zm4 7h4a2 2 0 0 0 0-4h-4v4z"/></svg>
-        <div><b>Estacionamento</b><span>Próprio e gratuito</span></div>
-      </div>
-      
-    </div>
-  </div>
+<section class="quick-facts">
 </section>
 
 <!-- ============================= SOBRE ============================= -->
@@ -902,7 +843,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
           </div>
           <ul class="room-amen"><li>Cama solteiro</li><li>Ar-condicionado</li><li>Frigobar</li><li>TV</li><li>Wi-Fi</li></ul>
           <div class="room-foot">
-            <a href="https://wa.me/554435251919" class="btn btn-outline">Reservar</a>
+            <a href="https://wa.me/554435251919" class="btn btn-outline" target="_blank">Reservar</a>
           </div>
         </div>
       </article>
@@ -920,7 +861,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
           </div>
           <ul class="room-amen"><li>Camas duplas</li><li>Ar-condicionado</li><li>Frigobar</li><li>TV</li><li>Wi-Fi</li></ul>
           <div class="room-foot">
-            <a href="https://wa.me/554435251919" class="btn btn-outline">Reservar</a>
+            <a href="https://wa.me/554435251919" class="btn btn-outline" target="_blank">Reservar</a>
           </div>
         </div>
       </article>
@@ -938,7 +879,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
           </div>
           <ul class="room-amen"><li>Cama casal e solteiro</li><li>Ar-condicionado</li><li>Frigobar</li><li>TV</li><li>Wi-Fi</li></ul>
           <div class="room-foot">
-            <a href="https://wa.me/554435251919" class="btn btn-outline">Reservar</a>
+            <a href="https://wa.me/554435251919" class="btn btn-outline" target="_blank">Reservar</a>
           </div>
         </div>
       </article>
@@ -950,14 +891,21 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 <!-- ============================= COMODIDADES ============================= -->
 <section class="section-pad" id="comodidades">
   <div class="container center">
-    <span class="eyebrow">Estrutura</span>
-    <h2 class="title">Comodidades</h2>
-    <p class="lead">Tudo o que você precisa para uma estadia tranquila e produtiva.</p>
+    <span class="eyebrow" id="estrutura">Estrutura</span>
+    <h2 class="title" id="comodidades">Comodidades</h2>
+    <p class="lead" id="texto-comodidades">Tudo o que você precisa para uma estadia tranquila e produtiva.</p>
     <div class="amen-grid">
       <div class="amen-card"><svg viewBox="0 0 24 24"><path d="M12 3C7 3 3.1 5.1 1 8l11 13L23 8c-2.1-2.9-6-5-11-5z"/></svg><b>Wi-Fi grátis</b><span>Internet em todo o hotel</span></div>
       <div class="amen-card"><svg viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm1 3v5h8V5H8zm0 7v2h8v-2H8z"/></svg><b>Frigobar</b><span>Em todos os quartos</span></div>
-      <div class="amen-card"><svg viewBox="0 0 24 24"><path d="M6 2h9a5 5 0 0 1 0 10h-5v8H6V2zm4 7h4a2 2 0 0 0 0-4h-4v4z"/></svg><b>Estacionamento</b><span>Próprio e gratuito</span></div>
-      <div class="amen-card"><svg viewBox="0 0 24 24"><path d="M2 11h20v2H2zM4 7h16a2 2 0 0 1 2 2H2a2 2 0 0 1 2-2zM3 15h18v3a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg><b>Café da manhã</b><span>Incluso na diária</span></div>
+<div class="amen-card">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M5 11l1.4-4.2A2 2 0 0 1 8.3 5h7.4a2 2 0 0 1 1.9 1.8L19 11h1a1 1 0 0 1 1 1v4h-2a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H3v-4a1 1 0 0 1 1-1h1zm2.7-4L6.8 10h10.4l-.9-3H7.7z"/>
+    <circle cx="7" cy="16" r="1.5"/>
+    <circle cx="17" cy="16" r="1.5"/>
+  </svg>
+  <b>Estacionamento</b>
+  <span>Próprio e gratuito</span>
+</div>      <div class="amen-card"><svg viewBox="0 0 24 24"><path d="M2 11h20v2H2zM4 7h16a2 2 0 0 1 2 2H2a2 2 0 0 1 2-2zM3 15h18v3a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg><b>Café da manhã</b><span>Incluso na diária</span></div>
       <div class="amen-card"><svg viewBox="0 0 24 24"><path d="M3 6h18a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 2v4h18V8H3zm4 7a1 1 0 0 1 1 1c0 1.5-1 2-1 3a1 1 0 1 1-2 0c0-1 1-1.5 1-3a1 1 0 0 1 1-1zm5 0a1 1 0 0 1 1 1c0 1.5-1 2-1 3a1 1 0 1 1-2 0c0-1 1-1.5 1-3a1 1 0 0 1 1-1zm5 0a1 1 0 0 1 1 1c0 1.5-1 2-1 3a1 1 0 1 1-2 0c0-1 1-1.5 1-3a1 1 0 0 1 1-1z"/></svg><b>Ar-condicionado</b><span>Climatização individual</span></div>
       <div class="amen-card"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4v1h2a2 2 0 0 1 2 2v3H4V9a2 2 0 0 1 2-2h2V6a4 4 0 0 1 4-4zm-2 5h4V6a2 2 0 1 0-4 0v1zm-6 7h16v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6zm6 2v2h4v-2h-4z"/></svg><b>Profissionais a trabalho</b><span>condições especiais sob consulta</span></div>
       <div class="amen-card"><svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-6v2h3v2H7v-2h3v-2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v10h16V7H4z"/>></svg><b>TV</b><span></span></div>
@@ -972,7 +920,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
     <div>
       <span class="eyebrow">Onde estamos</span>
       <h2 class="title">No centro de Campo Mourão</h2>
-      <p class="lead">A localização do Campo Palace Hotel facilidade o acesso aos princiapais pontos da cidade. Ideal para quem vem a Campo Mourão a trabalho para eventos ou a passeio. Estamos próximos do comércio, restaurantes e serviçoes essenciais.</p>
+      <p class="lead">A localização do Campo Palace Hotel facilita o acesso aos princiapais pontos da cidade. Ideal para quem vem a Campo Mourão a trabalho para eventos ou a passeio. Estamos próximos do comércio, restaurantes e serviçoes essenciais.</p>
       <ul class="loc-list">
         <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 4 7 13 7 13s7-9 7-13a7 7 0 0 0-7-7zm0 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg><div><b>Endereço</b><span>Av. Manoel Mendes de Camargo, 1661 - Centro, Campo Mourão - PR, 87303-000</span></div></li>
         <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg><div><b>Telefone</b><span>(44) 3525-1919</span></div></li>
@@ -1048,11 +996,12 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
   <div class="container">
     <h2 class="title">Pronto para se hospedar?</h2>
     <p>Garanta sua reserva pelo WhatsApp e aproveite o melhor da hospitalidade de Campo Mourão.</p>
-    <a href="https://wa.me/554435251919" class="btn btn-dark btn-lg">Fazer minha reserva ✅</a>
+    <a href="https://wa.me/554435251919" class="btn btn-dark btn-lg" target="_blank">Fazer minha reserva ✅</a>
   </div>
 </section>
 
-<!-- ============================= FOOTER ============================= -->
+<!-- ============================= FOOTER ============================= 
+
 <footer class="site-footer" id="contato">
   <div class="container">
     <div class="footer-grid">
@@ -1087,12 +1036,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
       <span>Campo Mourão · Paraná</span>
     </div>
   </div>
-</footer>
-
-<!-- ============================= WHATSAPP FLOAT ============================= -->
-<a href="https://wa.me/55449XXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva" class="wa-float" target="_blank" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg>
-</a>
+</footer> -->
 
 <script>
 // Header scroll state
