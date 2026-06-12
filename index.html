@@ -73,6 +73,12 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 .center{text-align:center}
 .center .lead{margin-left:auto;margin-right:auto}
 
+@media (max-width: 1024px){
+  .lead{
+    display: none;
+  }
+}
+
 /* ---------- Buttons ---------- */
 .btn{
   display:inline-flex;align-items:center;gap:9px;
@@ -188,6 +194,12 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
   font-weight:500;
 }
 
+@media (max-width:1024px){
+  .hero .eyebrow{
+    font-size:.70rem;
+  }
+}
+
 /* TÍTULO */
 .hero h1{
   font-size:clamp(3.0rem,6vw,6rem);
@@ -297,11 +309,6 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
     padding-left:24px;
     max-width:560px;
   }
-
-  .hero h1{
-    font-size:clamp(3rem,8vw,5rem);
-  }
-
 }
 
 @media(max-width:768px){
@@ -345,7 +352,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
   }
 
   .hero h1{
-    font-size:clamp(2.8rem,13vw,4.6rem);
+    font-size:3.00rem;
     max-width:100%;
     line-height:.95;
   }
@@ -358,6 +365,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 
   .hero-actions{
     flex-direction:column;
+    margin-top: 120px;
   }
 
   .hero .btn{
@@ -874,7 +882,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
   <div class="hero-bg"></div>
   <div class="container hero-inner">
     <span class="eyebrow">Campo Mourão · Paraná</span>
-    <h1>Seu descanso no <em>coração</em> de Campo Mourão</h1>
+    <h1 class="h1-hero">Seu descanso no <em>coração</em> de Campo Mourão</h1>
     <p class="p-hero">Conforto, atendimento acolhedor, segurança e um excelente café da manhã — a poucos passos do centro comercial, cultural e dos principais pontos da cidade.</p>
     <div class="hero-actions">
       <a href="https://wa.me/554435251919" class="btn btn-gold btn-lg" target="_blank">Reservar Agora</a>
@@ -928,7 +936,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
   <div class="container">
     <div class="rating-head">
       <span class="eyebrow">O que dizem os hóspedes</span>
-      <div class="rating-score">4,3</div>
+      <div class="rating-score">4,8</div>
       <div class="rating-stars">★★★★☆</div>
     </div>
     <div class="review-grid">
