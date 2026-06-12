@@ -216,6 +216,12 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
   margin-bottom:20px;
 }
 
+@media (max-width:1024px){
+  .hero p{
+    display: none;
+  }
+}
+
 /* BOTÕES */
 .hero-actions{
   display:flex;
@@ -578,7 +584,11 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 .rating-stars{color:var(--gold);font-size:1.5rem;letter-spacing:3px}
 .rating-meta{color:var(--muted);font-size:.92rem}
 .rating-meta a{color:var(--gold);font-weight:600}
-.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
 .review-card{
   background:#fff;border:1px solid var(--line);border-radius:var(--radius);
   padding:28px;box-shadow:var(--shadow-sm);
@@ -593,6 +603,36 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 }
 .review-author b{font-size:.9rem;color:var(--ink);display:block}
 .review-author span{font-size:.78rem;color:var(--muted)}
+
+/* Mobile */
+@media (max-width:767px){
+
+    .review-grid{
+        display:flex;
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        gap:16px;
+
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
+
+        padding-bottom:10px;
+    }
+
+    .review-grid::-webkit-scrollbar{
+        display:none;
+    }
+
+    .review-grid{
+        scrollbar-width:none;
+    }
+
+    .review-card{
+        flex:0 0 85%;
+        min-width:85%;
+        scroll-snap-align:center;
+    }
+}
 
 /* =========================================================
    LOCALIZAÇÃO
@@ -773,6 +813,12 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
 /* =========================================================
    RESPONSIVE
    ========================================================= */
+
+@media (max-width:1024px){
+  #comodidades{
+    display: none;
+  }
+}
 @media(max-width:980px){
   .about-grid,.breakfast-grid,.location-grid{grid-template-columns:1fr;gap:40px}
   .rooms-grid,.review-grid{grid-template-columns:repeat(2,1fr)}
@@ -829,7 +875,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
   <div class="container hero-inner">
     <span class="eyebrow">Campo Mourão · Paraná</span>
     <h1>Seu descanso no <em>coração</em> de Campo Mourão</h1>
-    <p>Conforto, atendimento acolhedor, segurança e um excelente café da manhã — a poucos passos do centro comercial, cultural e dos principais pontos da cidade.</p>
+    <p class="p-hero">Conforto, atendimento acolhedor, segurança e um excelente café da manhã — a poucos passos do centro comercial, cultural e dos principais pontos da cidade.</p>
     <div class="hero-actions">
       <a href="https://wa.me/554435251919" class="btn btn-gold btn-lg" target="_blank">Reservar Agora</a>
       <a href="#quartos" class="btn btn-outline btn-lg">Ver quartos</a>
